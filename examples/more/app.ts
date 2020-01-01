@@ -43,8 +43,8 @@ function loadProgressBar() {
       console.log(e)
       NProgress.set(calculatePercentage(e.loaded, e.total))
     }
-    instance.defaults.onDownloadProgress = update
-    instance.defaults.onUploadProgress = update
+    instance.defaults.onDownLoadProgress = update
+    instance.defaults.onUpLoadProgress = update
   }
 
   const setupStopProgress = () => {
