@@ -1,17 +1,17 @@
 import { isPlainObject, deepMerge } from "./util";
 import { Method } from "../types";
 
-function normalizeHeaderName(headers: any, normalizeName: string): void {
+function normalizeHeaderName(headers: any, normalizedName: string): void {
   if (!headers) {
     return
   }
 
-  Object.keys(headers).forEach((name) => {
-    if (name !== normalizeName && name.toLowerCase() === normalizeName.toUpperCase()) {
-      headers[normalizeName] = headers[name];
-      delete headers[name];
+  Object.keys(headers).forEach(name => {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = headers[name]
+      delete headers[name]
     }
-  });
+  })
 }
 
 export function parseHeaders(headers:string): any {
