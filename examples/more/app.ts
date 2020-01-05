@@ -179,5 +179,5 @@ axios.all([getA(), getB()])
       testString: 'thisIsATest'
     }
   }
-  console.log(axios.getUri(fakeConfig))
+  console.log(axios.getUri(fakeConfig));
 
