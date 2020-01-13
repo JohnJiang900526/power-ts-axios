@@ -1,5 +1,5 @@
-import { isPlainObject, deepMerge } from "./util";
-import { Method } from "../types";
+import { isPlainObject, deepMerge } from './util'
+import { Method } from '../types'
 
 function normalizeHeaderName(headers: any, normalizedName: string): void {
   if (!headers) {
@@ -14,51 +14,51 @@ function normalizeHeaderName(headers: any, normalizedName: string): void {
   })
 }
 
-export function parseHeaders(headers:string): any {
-  let parsed = Object.create(null);
+export function parseHeaders(headers: string): any {
+  let parsed = Object.create(null)
 
   if (!headers) {
-    return parsed;
+    return parsed
   }
 
-  headers.split('\r\n').forEach((line) => {
-    let [key, ...vals] = line.split(':');
-    key = key.trim().toLowerCase();
+  headers.split('\r\n').forEach(line => {
+    let [key, ...vals] = line.split(':')
+    key = key.trim().toLowerCase()
 
     if (!key) {
       return
     }
 
-    let val = vals.join(":").trim();
-    parsed[key] = val;
-  });
-  return parsed;
+    let val = vals.join(':').trim()
+    parsed[key] = val
+  })
+  return parsed
 }
 
 export function processHeaders(headers: any, data: any): any {
-  normalizeHeaderName(headers, 'Content-Type');
+  normalizeHeaderName(headers, 'Content-Type')
 
   if (isPlainObject(data)) {
     if (headers && !headers['Content-Type']) {
-      headers['Content-Type'] = 'application/json;charset=UTF-8';
+      headers['Content-Type'] = 'application/json;charset=utf-8'
     }
   }
 
-  return headers;
+  return headers
 }
 
 export function flattenHeaders(headers: any, method: Method): any {
   if (!headers) {
-    return headers;
+    return headers
   }
 
-  headers = deepMerge(headers.common, headers[method], headers);
+  headers = deepMerge(headers.common, headers[method], headers)
 
-  const methodsToDelete = ["delete", "get", "head", "options", "post", "put", "patch", "common"];
+  const methodsToDelete = ['delete', 'get', 'head', 'options', 'post', 'put', 'patch', 'common']
 
   methodsToDelete.forEach(method => {
-    delete headers[method];
-  });
+    delete headers[method]
+  })
 
-  return headers;
+  return headers
 }
