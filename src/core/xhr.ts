@@ -10,6 +10,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     const {
       data = null,
       url,
+      /* istanbul ignore next */
       method = 'get',
       headers = {},
       responseType,
@@ -58,12 +59,14 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
           return
         }
 
+        /* istanbul ignore next */
         if (request.status === 0) {
           return
         }
 
         const responseHeaders = parseHeaders(request.getAllResponseHeaders())
-        const responseData = responseType !== 'text' ? request.response : request.responseText
+        const responseData =
+          responseType && responseType !== 'text' ? request.response : request.responseText
 
         const response: AxiosResponse = {
           data: responseData,
@@ -77,6 +80,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
         handleReponse(response)
       }
 
+      /* istanbul ignore next */
       request.onerror = function handleError() {
         reject(createError('Network Error', config, null, request))
       }
