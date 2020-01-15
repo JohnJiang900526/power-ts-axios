@@ -1,6 +1,6 @@
 {
   "name": "power-ts-axios",
-  "version": "0.1.5",
+  "version": "1.0.1",
   "description": "",
   "keywords": [],
   "main": "dist/power-ts-axios.umd.js",
