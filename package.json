@@ -1,5 +1,5 @@
 {
-  "name": "ts-axios-new",
+  "name": "power-ts-axios",
   "version": "0.1.5",
   "description": "",
   "keywords": [],
@@ -9,10 +9,10 @@
   "files": [
     "dist"
   ],
-  "author": "ustbhuangyi <280309453@qq.com>",
+  "author": "john <1163830687@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ustbhuangyi/ts-axios"
+    "url": "https://github.com/JohnJiang900526/power-ts-axios"
   },
   "license": "MIT",
   "engines": {
