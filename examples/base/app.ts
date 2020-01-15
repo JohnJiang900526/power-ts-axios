@@ -1,4 +1,4 @@
-import axios from '../../src/index'
+import axios from "power-ts-axios"
 
 // axios({
 //   method: 'get',
@@ -92,16 +92,16 @@ import axios from '../../src/index'
 //   data: searchParams
 // });
 
-axios({
-  method: 'post',
-  url: '/base/post',
-  data: {
-    a: 1,
-    b: 2
-  }
-}).then((res) => {
-  console.log(res);
-});
+// axios({
+//   method: 'post',
+//   url: '/base/post',
+//   data: {
+//     a: 1,
+//     b: 2
+//   }
+// }).then((res) => {
+//   console.log(res);
+// });
 
 axios({
   method: 'post',
