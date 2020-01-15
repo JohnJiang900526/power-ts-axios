@@ -2,7 +2,7 @@
   "name": "power-ts-axios",
   "version": "1.0.2",
   "description": "",
-  "keywords": [],
+  "keywords": ["power-ts-axios", "axios", "ajax", "ts-axios", "power-ts"],
   "main": "dist/power-ts-axios.umd.js",
   "module": "dist/power-ts-axios.es5.js",
   "typings": "dist/types/index.d.ts",
